@@ -26,9 +26,8 @@ export function Footer() {
               rel="noopener noreferrer"
               className="inline-block border border-background/20 rounded-full px-4 py-2 text-sm text-background/90 hover:bg-background/10 transition-colors"
               data-testid="link-footer-littlenoories"
-            >
-              Creator of Little Noories App
-            </a>
+            >Creator of Little Noories App
+            littlenoories.app</a>
           </div>
         </div>
         
