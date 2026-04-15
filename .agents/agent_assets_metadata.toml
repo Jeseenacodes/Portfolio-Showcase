@@ -1,0 +1,14 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "O6kEqbAmS8N0JS4HsL4lR"
+uri = "file://artifacts/quran-teacher-portfolio/public/images/hero-bg.png"
+type = "image"
+title = "Islamic arch window overlooking garden"
+
+[[generated]]
+id = "zRqZA6fIUog5sQWXSxfsB"
+uri = "file://artifacts/quran-teacher-portfolio/public/images/about-quran.png"
+type = "image"
+title = "Open Quran on wooden stand"

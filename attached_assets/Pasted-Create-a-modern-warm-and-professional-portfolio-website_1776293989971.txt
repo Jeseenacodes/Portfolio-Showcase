@@ -1,0 +1,44 @@
+Create a modern, warm, and professional portfolio website for a Quran teacher named [Your Name]. The site should reflect her unique background as a Hafidha and Alimiyya graduate with over a decade of teaching experience. It should inspire trust, highlight her qualifications, and make it easy for potential students or parents to contact her.
+
+About the Teacher:
+
+· Hafidha and Alimiyya graduate
+· Over 10 years of experience teaching Quran and Islamic studies to children and adults
+· Passionate about helping students build a strong, loving connection with the Quran
+· Creator of Little Noories app (littlenoories.app) as a side project
+
+Services Offered:
+
+· Hifdh (Quran memorization) – personalized plans for children and adults
+· Quran Recitation (Tajweed) – learn to recite correctly and beautifully
+· Tafseer Classes – understand the meaning and context of the Quran
+· One‑on‑One Consultation Sessions – personalized guidance for students and parents
+
+Target Audience:
+
+· Parents seeking Quran teachers for their children
+· Adults wanting to start or improve their Quran journey
+· Families looking for a trusted, qualified, and caring teacher
+
+Website Sections:
+
+· Home: Warm welcome, photo of the teacher (placeholder), brief introduction, call to action
+· About: Her journey – from Hafidha/Alimah to teacher, and her teaching philosophy
+· Services: Clear descriptions of each service (Hifdh, Recitation, Tafseer, Consultation)
+· Pricing: Simple, transparent pricing (placeholder – can be hourly or package-based)
+· Testimonials: Placeholder section for parent and student reviews
+· Contact: Contact form, email address, WhatsApp number (placeholders), and a note that she will respond within 24‑48 hours
+· FAQ: Common questions (e.g., age groups, online vs. in‑person, schedule flexibility)
+
+Design Preferences:
+
+· Clean, warm, trustworthy aesthetic
+· Color palette: soft greens, gentle golds, cream, or deep blue (Islamic / trustworthy tones)
+· Mobile‑friendly / responsive
+· Easy to navigate (menu: Home, About, Services, Pricing, Testimonials, Contact, FAQ)
+· Calming, professional, and welcoming – not overly flashy
+
+Call to Action:
+
+· "Book a Free Consultation" button (links to contact form or scheduling placeholder)
+· "Get in Touch" buttons throughout
