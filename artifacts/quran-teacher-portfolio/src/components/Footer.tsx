@@ -24,7 +24,7 @@ export function Footer() {
               href="https://littlenoories.app" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-block border border-background/20 rounded-full px-4 py-2 text-sm text-background/90 hover:bg-background/10 transition-colors"
+              className="inline-block border border-background/20 rounded-full px-4 py-2 text-sm text-background/90 hover:bg-background/10 transition-colors text-center"
               data-testid="link-footer-littlenoories"
             >Creator of Little Noories App
             littlenoories.app</a>
