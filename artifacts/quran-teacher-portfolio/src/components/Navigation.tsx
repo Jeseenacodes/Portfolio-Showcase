@@ -44,9 +44,7 @@ export function Navigation() {
           onClick={() => scrollTo("home")}
           className="text-xl font-serif font-bold text-foreground"
           data-testid="link-logo"
-        >
-          Ustadhah Sarah
-        </button>
+        >Ustadhah Jeseena</button>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-8">
@@ -80,7 +78,6 @@ export function Navigation() {
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
-
       {/* Mobile Nav */}
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-background border-t border-border shadow-lg py-4 px-4 flex flex-col space-y-4">
