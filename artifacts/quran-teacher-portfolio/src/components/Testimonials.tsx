@@ -4,13 +4,13 @@ import { Star } from "lucide-react";
 export function Testimonials() {
   const testimonials = [
     {
-      quote: "Ustadhah Sarah has completely transformed my daughter's relationship with the Quran. What used to be a struggle is now the highlight of her day. Her gentle, patient approach is exactly what we were looking for.",
+      quote: "Ustadhah Jeseena has completely transformed my daughter's relationship with the Quran. What used to be a struggle is now the highlight of her day. Her gentle, patient approach is exactly what we were looking for.",
       author: "Aisha M.",
       role: "Parent of a 9-year-old",
     },
     {
       quote: "As an adult beginner, I was incredibly intimidated to start learning Tajweed. She made me feel completely at ease from day one. I've progressed faster in six months than I did in years of self-study.",
-      author: "Omar K.",
+      author: "Zahra K.",
       role: "Adult Student",
     },
     {
