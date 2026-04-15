@@ -18,7 +18,6 @@ export function Hero() {
         <div className="absolute inset-0 bg-background/80 md:bg-background/60 backdrop-blur-[2px]"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent"></div>
       </div>
-
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -67,7 +66,7 @@ export function Hero() {
             <div className="relative w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-8 border-background/50 shadow-2xl">
               <div className="absolute inset-0 bg-primary/20 backdrop-blur-md flex items-center justify-center">
                 <div className="text-center p-8">
-                  <h3 className="font-serif text-2xl font-bold text-primary mb-2">Ustadhah Sarah</h3>
+                  <h3 className="font-serif text-2xl font-bold text-primary mb-2">Ustadhah Jeseena</h3>
                   <p className="text-primary/80 font-medium">Hafidha & Alimiyya Graduate</p>
                   <p className="text-sm mt-4 text-primary/70">10+ Years Experience</p>
                 </div>
