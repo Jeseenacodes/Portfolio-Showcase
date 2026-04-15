@@ -33,7 +33,7 @@ export function Footer() {
         </div>
         
         <div className="text-center text-background/50 text-sm flex flex-col md:flex-row justify-between items-center">
-          <p>&copy; {currentYear} Ustadhah Sarah. All rights reserved.</p>
+          <p>&copy; {currentYear} Jeseena. All rights reserved.</p>
           <p className="mt-2 md:mt-0 italic font-serif">Bismillahir Rahmanir Raheem</p>
         </div>
       </div>
