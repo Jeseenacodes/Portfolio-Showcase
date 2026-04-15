@@ -32,9 +32,7 @@ export function Hero() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground leading-tight mb-6">
               Nurturing hearts with the light of the Quran.
             </h1>
-            <p className="text-lg md:text-xl text-foreground/80 mb-8 leading-relaxed">
-              Expert, compassionate Quran instruction for children and adults by a Hafidha and Alimiyya graduate with over a decade of teaching experience.
-            </p>
+            <p className="text-lg md:text-xl text-foreground/80 mb-8 leading-relaxed">Compassionate Quran instruction for children and adults by a Hafidha and Alimiyya graduate with over a decade of teaching experience.</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
