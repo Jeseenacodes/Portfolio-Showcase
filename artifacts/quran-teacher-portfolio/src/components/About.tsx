@@ -48,9 +48,7 @@ export function About() {
             </h3>
             
             <div className="space-y-4 text-foreground/80 mb-8 leading-relaxed">
-              <p>
-                Assalamu alaikum. I'm Ustadhah Sarah, and my life's passion is connecting hearts with the Quran. Since graduating with my Alimiyya degree and completing my Hifdh, I have dedicated over ten years to teaching students of all ages.
-              </p>
+              <p>Assalamu alaikum. I'm Jeseena, and my life's passion is connecting hearts with the Quran. Since graduating with my Alimiyya degree and completing my Hifdh, I have dedicated over ten years to teaching students of all ages.</p>
               <p>
                 My teaching philosophy is simple: the Quran should be a source of joy, peace, and profound connection, not stress or anxiety. Whether I'm guiding a young child through their first Arabic letters or helping an adult perfect their Tajweed, I focus on building a warm, encouraging environment where mistakes are simply steps in the learning journey.
               </p>
