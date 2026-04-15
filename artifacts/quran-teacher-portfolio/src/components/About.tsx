@@ -5,7 +5,7 @@ export function About() {
   const stats = [
     { icon: GraduationCap, label: "Alimiyya Graduate", desc: "Rigorous Islamic scholarship" },
     { icon: BookOpen, label: "Hafidha", desc: "Memorized the noble Quran" },
-    { icon: Clock, label: "10+ Years", desc: "Teaching experience" },
+    { icon: Clock, label: "9+ Years", desc: "Teaching experience" },
     { icon: Heart, label: "Compassionate", desc: "Student-centered approach" },
   ];
 
