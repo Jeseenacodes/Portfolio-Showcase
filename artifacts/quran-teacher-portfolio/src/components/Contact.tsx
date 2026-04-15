@@ -81,7 +81,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="font-bold text-foreground">WhatsApp</h4>
-                  <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                  <p className="text-muted-foreground">+1 (111) 123-0000</p>
                 </div>
               </div>
               
