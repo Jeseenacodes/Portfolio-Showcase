@@ -91,7 +91,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="font-bold text-foreground">Location</h4>
-                  <p className="text-muted-foreground">Online Worldwide (Based in EST Timezone)</p>
+                  <p className="text-muted-foreground">Online Worldwide (Based in PST Timezone)</p>
                 </div>
               </div>
             </div>
