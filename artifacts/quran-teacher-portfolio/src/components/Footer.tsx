@@ -6,7 +6,7 @@ export function Footer() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid md:grid-cols-3 gap-8 items-center border-b border-background/10 pb-8 mb-8">
           <div className="text-center md:text-left">
-            <h2 className="text-2xl font-serif font-bold">Ustadhah Jeseena</h2>
+            <h2 className="font-serif font-bold text-[23px]">Ustadhah Jeseena</h2>
             <p className="text-background/70 mt-2 text-sm max-w-xs mx-auto md:mx-0">
               Nurturing hearts with the light of the Quran through compassionate, expert instruction.
             </p>
