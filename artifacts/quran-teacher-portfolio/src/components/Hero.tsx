@@ -66,7 +66,7 @@ export function Hero() {
                 <div className="text-center p-8">
                   <h3 className="font-serif text-2xl font-bold text-primary mb-2">Ustadhah Jeseena</h3>
                   <p className="text-primary/80 font-medium">Hafidha & Alimiyya Graduate</p>
-                  <p className="text-sm mt-4 text-primary/70">10+ Years Experience</p>
+                  <p className="text-sm mt-4 text-primary/70">9+ Years Experience</p>
                 </div>
               </div>
             </div>
