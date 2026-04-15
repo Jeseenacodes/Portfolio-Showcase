@@ -29,7 +29,7 @@ export function FAQ() {
     },
     {
       question: "How long does it take to learn to read?",
-      answer: "Every student's pace is different. Generally, a dedicated beginner adult can comfortably read from the Mushaf (with basic rules) in 4-6 months with consistent practice. Children's timelines vary based on age and consistency.",
+      answer: "Every student's pace is different. Generally, a dedicated beginner adult can comfortably read from the Mushaf (with basic rules) in 8-10 months with consistent practice. Children's timelines vary based on age and consistency.",
     },
   ];
 
