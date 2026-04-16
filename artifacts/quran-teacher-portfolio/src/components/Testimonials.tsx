@@ -85,15 +85,6 @@ const testimonials = [
   },
 ];
 
-function getInitials(name: string) {
-  return name
-    .split(" ")
-    .map((n) => n[0])
-    .join("")
-    .slice(0, 2)
-    .toUpperCase();
-}
-
 
 export function Testimonials() {
   const [current, setCurrent] = useState(0);
@@ -131,9 +122,6 @@ export function Testimonials() {
           <div className="rounded-3xl overflow-hidden shadow-md border border-border/40 bg-background">
             {/* Coloured header */}
             <div className="bg-primary px-8 py-7 text-center">
-              <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-3 text-white font-bold text-lg">
-                {getInitials(t.author)}
-              </div>
               <h4 className="text-white font-serif text-xl font-bold">{t.author}</h4>
               <p className="text-white/70 text-xs mt-1 tracking-wide uppercase">Student Reflection</p>
             </div>
