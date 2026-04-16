@@ -1,55 +1,15 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
-
-const formSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  email: z.string().email({ message: "Please enter a valid email address." }),
-  phone: z.string().optional(),
-  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
-});
 
 export function Contact() {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-    },
-  });
-
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
-      console.log(values);
-      setIsSubmitting(false);
-      toast({
-        title: "Message Sent Successfully!",
-        description: "Thank you for reaching out. I will get back to you within 24-48 hours.",
-      });
-      form.reset();
-    }, 1000);
-  }
+  const GOOGLE_FORM_URL = "https://forms.gle/i2BirpGKRUDUson6A";
 
   return (
     <section id="contact" className="py-24 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
-          
+
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -61,7 +21,7 @@ export function Contact() {
               Start your Quran journey today.
             </h3>
             <p className="text-foreground/80 mb-10 leading-relaxed">
-              Whether you have questions about the programs, want to discuss a customized learning plan, or are ready to book your free consultation, I'd love to hear from you. Please fill out the form, and I aim to respond within 24-48 hours.
+              Whether you have questions about the programs, want to discuss a customised learning plan, or are ready to book your free consultation — I would love to hear from you. I aim to respond within 24–48 hours.
             </p>
 
             <div className="space-y-6">
@@ -71,10 +31,16 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="font-bold text-foreground">Email</h4>
-                  <p className="text-muted-foreground">salsabeelainjannah@gmail.com</p>
+                  <a
+                    href="mailto:salsabeelainjannah@gmail.com"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                    data-testid="link-contact-email"
+                  >
+                    salsabeelainjannah@gmail.com
+                  </a>
                 </div>
               </div>
-              
+
               <div className="flex items-start">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4 shrink-0">
                   <Phone size={20} />
@@ -84,7 +50,7 @@ export function Contact() {
                   <p className="text-muted-foreground">+1 (111) 123-0000</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4 shrink-0">
                   <MapPin size={20} />
@@ -102,91 +68,33 @@ export function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-card p-8 rounded-2xl shadow-sm border border-border"
+            className="flex flex-col items-center justify-center bg-card p-10 rounded-2xl shadow-sm border border-border text-center"
           >
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Full Name</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Your name" {...field} className="bg-background" data-testid="input-contact-name" />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Email Address</FormLabel>
-                        <FormControl>
-                          <Input placeholder="your.email@example.com" type="email" {...field} className="bg-background" data-testid="input-contact-email" />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <FormField
-                    control={form.control}
-                    name="phone"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Phone / WhatsApp (Optional)</FormLabel>
-                        <FormControl>
-                          <Input placeholder="+1 (555) 000-0000" {...field} className="bg-background" data-testid="input-contact-phone" />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Message</FormLabel>
-                      <FormControl>
-                        <Textarea 
-                          placeholder="Tell me a bit about who the classes are for and your goals..." 
-                          className="min-h-[120px] bg-background" 
-                          {...field} 
-                          data-testid="textarea-contact-message"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <Button 
-                  type="submit" 
-                  className="w-full rounded-full py-6 text-lg font-serif" 
-                  disabled={isSubmitting}
-                  data-testid="button-contact-submit"
-                >
-                  {isSubmitting ? (
-                    "Sending..."
-                  ) : (
-                    <>
-                      Send Message
-                      <Send size={18} className="ml-2" />
-                    </>
-                  )}
-                </Button>
-              </form>
-            </Form>
+            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
+              <Mail size={32} strokeWidth={1.5} />
+            </div>
+            <h4 className="text-2xl font-serif font-bold text-foreground mb-3">
+              Ready to reach out?
+            </h4>
+            <p className="text-foreground/70 mb-8 leading-relaxed max-w-sm">
+              Click below to open the contact form. Share a little about yourself and your goals, and I will be in touch soon, insha'Allah.
+            </p>
+            <Button
+              asChild
+              size="lg"
+              className="rounded-full px-10 py-6 text-lg font-serif"
+              data-testid="button-contact-form"
+            >
+              <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
+                Contact Me
+                <ExternalLink size={18} className="ml-2" />
+              </a>
+            </Button>
+            <p className="text-xs text-muted-foreground mt-5">
+              Opens in a new tab · Response within 24–48 hours
+            </p>
           </motion.div>
+
         </div>
       </div>
     </section>
