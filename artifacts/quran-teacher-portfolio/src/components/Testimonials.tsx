@@ -4,6 +4,26 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const testimonials = [
   {
+    quote: "Teacher is very nice and also straightforward, and she explains rules in a way that is not confusing, but easy to understand and comprehend. She also gives regular reminders of grammar rules and asks us to repeat things when we seem unsure, or when we do not use proper grammar, which is very helpful. Thank you so much for being such a great teacher!",
+    author: "Zoha Sadik",
+  },
+  {
+    quote: "Teacher Jeseena has taught my daughter in such an interesting way and with affection and constant encouragement that Hanya has started reading from the Quran in three months. We like the teacher's approach and methodology. Jazakallah khair!",
+    author: "Azmy (Student's Mom)",
+  },
+  {
+    quote: "You are already doing more than your share. I am very satisfied with the format and pace of the class, Alhamdulillah.",
+    author: "Heena Amin",
+  },
+  {
+    quote: "Jeseena takes her time and reinforces the rules which I really appreciate. Her teaching approach is systematic and I like how she is building up my tajweed gradually. I am really happy with Jeseena as my teacher and her soft, kind approach. It is a joy to learn tajweed with Jeseena!",
+    author: "Rehana",
+  },
+  {
+    quote: "Alhamdulillah! Blessed to have her as a teacher. She is so dedicated to her work and teaching. May Allah swt bless her for all the efforts she makes to help us understand and read the Quran.",
+    author: "Aisha Naqvi",
+  },
+  {
     quote: "It helps me to revise the material learned in the class and anything that I missed. Miss Jeseena also really helps me to clear up any misunderstanding regarding the material. And the gems that she shares at the end of class are really one of my boosters to keep studying.",
     author: "Nur Amirah",
   },
