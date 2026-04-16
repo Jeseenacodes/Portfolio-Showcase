@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, ExternalLink } from "lucide-react";
+import { Mail, MapPin, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Contact() {
@@ -38,16 +38,6 @@ export function Contact() {
                   >
                     salsabeelainjannah@gmail.com
                   </a>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4 shrink-0">
-                  <Phone size={20} />
-                </div>
-                <div>
-                  <h4 className="font-bold text-foreground">WhatsApp</h4>
-                  <p className="text-muted-foreground">+1 (111) 123-0000</p>
                 </div>
               </div>
 
