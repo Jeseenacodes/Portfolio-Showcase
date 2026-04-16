@@ -66,21 +66,6 @@ function getInitials(name: string) {
     .toUpperCase();
 }
 
-const avatarColors = [
-  "bg-primary/80",
-  "bg-amber-600/70",
-  "bg-teal-600/70",
-  "bg-rose-500/70",
-  "bg-violet-600/70",
-  "bg-emerald-600/70",
-  "bg-sky-600/70",
-  "bg-orange-500/70",
-  "bg-indigo-500/70",
-  "bg-pink-500/70",
-  "bg-lime-600/70",
-  "bg-cyan-600/70",
-  "bg-amber-700/70",
-];
 
 export function Testimonials() {
   const [current, setCurrent] = useState(0);
@@ -114,26 +99,6 @@ export function Testimonials() {
         </div>
 
         <div className="max-w-xl mx-auto">
-          {/* Avatar dot navigation */}
-          <div className="flex flex-wrap justify-center gap-2 mb-8">
-            {testimonials.map((t, i) => (
-              <button
-                key={i}
-                onClick={() => goTo(i)}
-                aria-label={`Go to testimonial by ${t.author}`}
-                className={`w-9 h-9 rounded-full text-white text-xs font-bold flex items-center justify-center transition-all duration-200 ${
-                  avatarColors[i % avatarColors.length]
-                } ${
-                  i === current
-                    ? "ring-2 ring-offset-2 ring-primary scale-110 shadow-md"
-                    : "opacity-60 hover:opacity-90"
-                }`}
-              >
-                {getInitials(t.author)}
-              </button>
-            ))}
-          </div>
-
           {/* Page card */}
           <div className="rounded-3xl overflow-hidden shadow-md border border-border/40 bg-background">
             {/* Coloured header */}
