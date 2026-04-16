@@ -4,19 +4,28 @@ import { Star } from "lucide-react";
 export function Testimonials() {
   const testimonials = [
     {
-      quote: "Ustadhah Jeseena has completely transformed my daughter's relationship with the Quran. What used to be a struggle is now the highlight of her day. Her gentle, patient approach is exactly what we were looking for.",
-      author: "Aisha M.",
-      role: "Parent of a 9-year-old",
+      quote: "Ustadha Jeseena always prepared and answered all questions. She provides easy to remember charts, other resources and discussion summary emailed to us which is really helpful especially if I missed any session.",
+      author: "Hafsa Qadri",
     },
     {
-      quote: "As an adult beginner, I was incredibly intimidated to start learning Tajweed. She made me feel completely at ease from day one. I've progressed faster in six months than I did in years of self-study.",
-      author: "Zahra K.",
-      role: "Adult Student",
+      quote: "She explains the work very well, makes sure we understand everything, tries to make it simpler for us, sends us discussion notes and extra examples to practice on, and makes sure we all participate in class.",
+      author: "Sumaya Dindar",
     },
     {
-      quote: "Her Hifdh program is rigorous but never overwhelming. She understands the psychology of memorization perfectly and knows exactly when to push and when to review. My son is thriving.",
-      author: "Fatima S.",
-      role: "Parent of a Hifdh student",
+      quote: "My Ustadha goes over each and every concept and explains in detail until the entire class understands. She is very patient and very approachable — we do not have to think twice before asking any question. I just love the way she keeps us engaged.",
+      author: "Sajeedha Reshmi",
+    },
+    {
+      quote: "Sr Jeseena's way of breaking each topic down step by step like solving a calculus problem is extremely helpful.",
+      author: "Samina Ashraf",
+    },
+    {
+      quote: "The gems she shares at the end of class are really one of my boosters to keep studying. It helps me revise the material learned and clears up any misunderstandings.",
+      author: "Nur Amirah",
+    },
+    {
+      quote: "Passionate and full of energy. It is something to know, it is something else to be able to share effectively. She does not mind going a little extra time to help us.",
+      author: "Nassimath Gbaguidi",
     },
   ];
 
@@ -30,28 +39,25 @@ export function Testimonials() {
           </h3>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-background p-8 rounded-2xl shadow-sm border border-border/50 flex flex-col"
+              transition={{ duration: 0.6, delay: index * 0.08 }}
+              className="bg-background p-7 rounded-2xl shadow-sm border border-border/50 flex flex-col"
             >
-              <div className="flex text-amber-400 mb-6">
+              <div className="flex text-amber-400 mb-5">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={16} fill="currentColor" />
+                  <Star key={i} size={14} fill="currentColor" />
                 ))}
               </div>
-              <p className="text-foreground/80 italic mb-8 flex-grow">
+              <p className="text-foreground/80 italic mb-6 flex-grow leading-relaxed text-sm">
                 "{testimonial.quote}"
               </p>
-              <div>
-                <p className="font-bold text-foreground">{testimonial.author}</p>
-                <p className="text-xs text-muted-foreground uppercase tracking-wider mt-1">{testimonial.role}</p>
-              </div>
+              <p className="font-bold text-foreground text-sm">{testimonial.author}</p>
             </motion.div>
           ))}
         </div>
