@@ -9,7 +9,7 @@ export function FAQ() {
   const faqs = [
     {
       question: "What age groups do you teach?",
-      answer: "I teach students of all ages. For children, I generally accept students starting at age 6 for formal classes. I also have many adult students, ranging from beginners learning the alphabet to advanced students seeking Ijaza in recitation.",
+      answer: "I teach students of all ages. For children, I generally accept students starting at age 4 for formal classes. I also have many adult students, ranging from beginners learning the alphabet to advanced.",
     },
     {
       question: "Are classes online or in-person?",
