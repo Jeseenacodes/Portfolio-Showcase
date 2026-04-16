@@ -1,11 +1,8 @@
 import express, { type Express } from "express";
 import cors from "cors";
-import pinoHttp from "pino-http";
-import type { IncomingMessage, ServerResponse } from "node:http";
+import { pinoHttp } from "pino-http";
 import router from "./routes";
 import { logger } from "./lib/logger";
-
-type RequestWithId = IncomingMessage & { id?: string | number };
 
 const app: Express = express();
 
@@ -13,16 +10,18 @@ app.use(
   pinoHttp({
     logger,
     serializers: {
-      req(req: RequestWithId): Record<string, unknown> {
+      req(req: unknown) {
+        const r = req as { id?: string | number; method?: string; url?: string };
         return {
-          id: req.id,
-          method: req.method,
-          url: typeof req.url === "string" ? req.url.split("?")[0] : req.url,
+          id: r.id,
+          method: r.method,
+          url: typeof r.url === "string" ? r.url.split("?")[0] : r.url,
         };
       },
-      res(res: ServerResponse): Record<string, unknown> {
+      res(res: unknown) {
+        const r = res as { statusCode: number };
         return {
-          statusCode: res.statusCode,
+          statusCode: r.statusCode,
         };
       },
     },
