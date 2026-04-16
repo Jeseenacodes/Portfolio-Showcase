@@ -39,9 +39,7 @@ export function Hero() {
                 onClick={scrollToContact}
                 className="font-serif text-lg rounded-full px-8 py-6 shadow-lg hover:shadow-xl transition-all"
                 data-testid="button-hero-cta"
-              >
-                Book a Free Consultation
-              </Button>
+              >Book a Free Assessment</Button>
               <Button
                 variant="outline"
                 size="lg"
