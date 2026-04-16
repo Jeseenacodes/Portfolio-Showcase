@@ -21,7 +21,7 @@ export function FAQ() {
     },
     {
       question: "Do you offer makeup classes?",
-      answer: "Yes. If a cancellation is made at least 24 hours in advance, we can schedule a makeup class within the same month, subject to availability. Last-minute cancellations cannot be made up.",
+      answer: "Yes, with conditions. If you need to cancel, please notify me at least 24 hours in advance and a makeup class can be arranged within the same month, subject to availability. Last-minute cancellations are not eligible for makeups. Please also note that US public holidays are observed as days off. If I am ever unavailable for any reason, I will always make up for those classes, insha'Allah. However, if you are absent, the responsibility for that class rests with you. Kindly communicate in advance whenever possible — it is greatly appreciated.",
     },
     {
       question: "What is the Little Noories app?",
