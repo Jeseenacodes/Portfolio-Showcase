@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import { BookOpen, GraduationCap, Heart, Clock } from "lucide-react";
+import { BookOpen, GraduationCap, Heart, Clock, Award } from "lucide-react";
 
 export function About() {
   const stats = [
     { icon: GraduationCap, label: "Alimiyya Graduate", desc: "Rigorous Islamic scholarship" },
     { icon: BookOpen, label: "Hafidha", desc: "Memorized the noble Quran" },
+    { icon: Award, label: "Ijaza Holder", desc: "Ashara Sughra & Kubra + major Hadith books" },
     { icon: Clock, label: "9+ Years", desc: "Teaching experience" },
     { icon: Heart, label: "Compassionate", desc: "Student-centered approach" },
   ];
@@ -51,6 +52,9 @@ export function About() {
               <p>Assalamu alaikum. I'm Jeseena, and my life's passion is connecting hearts with the Quran. Since graduating with my Alimiyya degree and completing my Hifdh, I have dedicated nearly a decade to teaching students of all ages.</p>
               <p>
                 My teaching philosophy is simple: the Quran should be a source of joy, peace, and profound connection, not stress or anxiety. Whether I'm guiding a young child through their first Arabic letters or helping an adult perfect their Tajweed, I focus on building a warm, encouraging environment where mistakes are simply steps in the learning journey.
+              </p>
+              <p>
+                I hold Ijaza in the ten Qira'at (Ashara Sughra and Kubra) as well as in major Hadith books, alhamdulillah — credentials I carry not as titles, but as a trust to transmit this sacred knowledge with integrity and care.
               </p>
               <p>
                 I am also the proud creator of the <a href="https://littlenoories.app" target="_blank" rel="noopener noreferrer" className="text-primary font-medium hover:underline">Little Noories app</a>, a side project born from my desire to make Islamic learning engaging and accessible for young minds outside of class hours.
