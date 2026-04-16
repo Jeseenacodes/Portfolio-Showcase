@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const testimonials = [
   {
@@ -56,75 +57,136 @@ const testimonials = [
   },
 ];
 
-function FlipCard({ quote, author, index }: { quote: string; author: string; index: number }) {
-  const [flipped, setFlipped] = useState(false);
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true, margin: "-30px" }}
-      transition={{ duration: 0.4, delay: (index % 6) * 0.06 }}
-      className="cursor-pointer"
-      style={{ perspective: "1000px", height: "200px" }}
-      onClick={() => setFlipped(!flipped)}
-      aria-label={`Testimonial from ${author}. Click to ${flipped ? "hide" : "read"}.`}
-    >
-      <div
-        className="relative w-full h-full transition-transform duration-500"
-        style={{
-          transformStyle: "preserve-3d",
-          transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
-        }}
-      >
-        {/* Front */}
-        <div
-          className="absolute inset-0 rounded-2xl border border-border/50 bg-background flex flex-col items-center justify-center gap-3 shadow-sm px-4"
-          style={{ backfaceVisibility: "hidden" }}
-        >
-          <span className="font-serif text-primary/30 text-5xl leading-none select-none">&ldquo;</span>
-          <p className="font-semibold text-foreground text-center text-sm">{author}</p>
-          <p className="text-xs text-muted-foreground">tap to read</p>
-        </div>
-
-        {/* Back */}
-        <div
-          className="absolute inset-0 rounded-2xl border border-primary/25 bg-primary/8 flex flex-col justify-between p-5 shadow-sm overflow-hidden"
-          style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
-        >
-          <p className="italic text-foreground/80 text-xs leading-relaxed line-clamp-6 flex-grow">
-            &ldquo;{quote}&rdquo;
-          </p>
-          <div className="flex items-center gap-2 mt-3 pt-3 border-t border-border/30">
-            <div className="h-px flex-1 bg-border/30" />
-            <p className="text-xs font-semibold text-foreground/90 whitespace-nowrap">{author}</p>
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  );
+function getInitials(name: string) {
+  return name
+    .split(" ")
+    .map((n) => n[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
 }
 
+const avatarColors = [
+  "bg-primary/80",
+  "bg-amber-600/70",
+  "bg-teal-600/70",
+  "bg-rose-500/70",
+  "bg-violet-600/70",
+  "bg-emerald-600/70",
+  "bg-sky-600/70",
+  "bg-orange-500/70",
+  "bg-indigo-500/70",
+  "bg-pink-500/70",
+  "bg-lime-600/70",
+  "bg-cyan-600/70",
+  "bg-amber-700/70",
+];
+
 export function Testimonials() {
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState(1);
+
+  function goTo(index: number) {
+    setDirection(index > current ? 1 : -1);
+    setCurrent(index);
+  }
+
+  function prev() {
+    if (current > 0) goTo(current - 1);
+  }
+
+  function next() {
+    if (current < testimonials.length - 1) goTo(current + 1);
+  }
+
+  const t = testimonials[current];
+
   return (
     <section id="testimonials" className="py-24 bg-primary/5 relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-2">
             Student Stories
           </h2>
           <h3 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">
             Words from the Community
           </h3>
-          <p className="text-muted-foreground text-sm">
-            Tap any card to read a student's reflection.
-          </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-          {testimonials.map((t, i) => (
-            <FlipCard key={i} {...t} index={i} />
-          ))}
+        <div className="max-w-xl mx-auto">
+          {/* Avatar dot navigation */}
+          <div className="flex flex-wrap justify-center gap-2 mb-8">
+            {testimonials.map((t, i) => (
+              <button
+                key={i}
+                onClick={() => goTo(i)}
+                aria-label={`Go to testimonial by ${t.author}`}
+                className={`w-9 h-9 rounded-full text-white text-xs font-bold flex items-center justify-center transition-all duration-200 ${
+                  avatarColors[i % avatarColors.length]
+                } ${
+                  i === current
+                    ? "ring-2 ring-offset-2 ring-primary scale-110 shadow-md"
+                    : "opacity-60 hover:opacity-90"
+                }`}
+              >
+                {getInitials(t.author)}
+              </button>
+            ))}
+          </div>
+
+          {/* Page card */}
+          <div className="rounded-3xl overflow-hidden shadow-md border border-border/40 bg-background">
+            {/* Coloured header */}
+            <div className="bg-primary px-8 py-7 text-center">
+              <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-3 text-white font-bold text-lg">
+                {getInitials(t.author)}
+              </div>
+              <h4 className="text-white font-serif text-xl font-bold">{t.author}</h4>
+              <p className="text-white/70 text-xs mt-1 tracking-wide uppercase">Student Reflection</p>
+            </div>
+
+            {/* Quote body */}
+            <div className="px-8 py-8 min-h-[200px] flex items-center">
+              <AnimatePresence mode="wait" custom={direction}>
+                <motion.p
+                  key={current}
+                  custom={direction}
+                  initial={{ opacity: 0, x: direction * 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: direction * -30 }}
+                  transition={{ duration: 0.3 }}
+                  className="text-foreground/80 italic leading-relaxed text-base text-center"
+                >
+                  &ldquo;{t.quote}&rdquo;
+                </motion.p>
+              </AnimatePresence>
+            </div>
+
+            {/* Navigation footer */}
+            <div className="flex items-center justify-between px-6 py-4 border-t border-border/30 bg-muted/20">
+              <button
+                onClick={prev}
+                disabled={current === 0}
+                className="flex items-center gap-1 text-sm font-medium text-foreground/60 hover:text-foreground disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+              >
+                <ChevronLeft size={16} />
+                Previous
+              </button>
+
+              <span className="text-xs text-muted-foreground">
+                {current + 1} / {testimonials.length}
+              </span>
+
+              <button
+                onClick={next}
+                disabled={current === testimonials.length - 1}
+                className="flex items-center gap-1 text-sm font-medium text-white bg-primary hover:bg-primary/90 disabled:opacity-30 disabled:cursor-not-allowed px-4 py-2 rounded-xl transition-colors"
+              >
+                Next
+                <ChevronRight size={16} />
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
