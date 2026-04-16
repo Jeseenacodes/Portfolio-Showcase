@@ -1,10 +1,31 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+function useTheme() {
+  const [isDark, setIsDark] = useState(() => {
+    const stored = localStorage.getItem("theme");
+    return stored ? stored === "dark" : false;
+  });
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (isDark) {
+      root.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      root.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [isDark]);
+
+  return { isDark, toggle: () => setIsDark((d) => !d) };
+}
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { isDark, toggle } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,7 +68,7 @@ export function Navigation() {
         >Ustadhah Jeseena</button>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center space-x-6">
           <div className="flex space-x-6">
             {navLinks.map((link) => (
               <button
@@ -60,6 +81,16 @@ export function Navigation() {
               </button>
             ))}
           </div>
+
+          <button
+            onClick={toggle}
+            aria-label="Toggle dark mode"
+            data-testid="button-theme-toggle"
+            className="p-2 rounded-full text-foreground/70 hover:text-primary hover:bg-primary/10 transition-colors"
+          >
+            {isDark ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+
           <Button
             onClick={() => scrollTo("contact")}
             className="font-serif rounded-full px-6"
@@ -69,15 +100,26 @@ export function Navigation() {
           </Button>
         </div>
 
-        {/* Mobile Toggle */}
-        <button
-          className="md:hidden p-2 text-foreground"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          data-testid="button-mobile-menu"
-        >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Mobile controls */}
+        <div className="md:hidden flex items-center gap-2">
+          <button
+            onClick={toggle}
+            aria-label="Toggle dark mode"
+            data-testid="button-theme-toggle-mobile"
+            className="p-2 rounded-full text-foreground/70 hover:text-primary transition-colors"
+          >
+            {isDark ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+          <button
+            className="p-2 text-foreground"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            data-testid="button-mobile-menu"
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
+
       {/* Mobile Nav */}
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-background border-t border-border shadow-lg py-4 px-4 flex flex-col space-y-4">
