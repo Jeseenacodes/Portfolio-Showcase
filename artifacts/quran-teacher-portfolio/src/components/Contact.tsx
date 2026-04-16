@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, MapPin, ExternalLink } from "lucide-react";
+import { Mail, MapPin, ExternalLink, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Contact() {
@@ -48,6 +48,23 @@ export function Contact() {
                 <div>
                   <h4 className="font-bold text-foreground">Location</h4>
                   <p className="text-muted-foreground">Online Worldwide (Based in PST Timezone)</p>
+                </div>
+              </div>
+
+              <div className="flex items-start">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4 shrink-0">
+                  <Instagram size={20} />
+                </div>
+                <div>
+                  <h4 className="font-bold text-foreground">Instagram</h4>
+                  <a
+                    href="https://www.instagram.com/salsabeela_in?igsh=MWIydGlpMHBzN3R6bA%3D%3D&utm_source=qr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    @salsabeela_in
+                  </a>
                 </div>
               </div>
             </div>
