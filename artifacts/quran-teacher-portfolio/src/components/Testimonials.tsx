@@ -4,6 +4,14 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const testimonials = [
   {
+    quote: "I look forward to my recitation class everyday. A good start to my days. Alhamdulillah.",
+    author: "Maryati Dahim",
+  },
+  {
+    quote: "You have been helping me throughout — may Allah the Most Merciful bless you, Ameen. I look forward to these classes. My desire to recite better has increased. Alhamdulillah.",
+    author: "Sofia Sultan",
+  },
+  {
     quote: "Teacher is very nice and also straightforward, and she explains rules in a way that is not confusing, but easy to understand and comprehend. She also gives regular reminders of grammar rules and asks us to repeat things when we seem unsure, or when we do not use proper grammar, which is very helpful. Thank you so much for being such a great teacher!",
     author: "Zoha Sadik",
   },
