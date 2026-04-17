@@ -1,0 +1,16 @@
+[build]
+  # Run from monorepo root so workspace packages resolve correctly.
+  # In Netlify UI, leave "Base directory" blank (monorepo root).
+  command       = "pnpm --filter @workspace/quran-teacher-portfolio run build"
+  publish       = "artifacts/quran-teacher-portfolio/dist"
+
+[build.environment]
+  NODE_VERSION  = "20"
+  # BASE_PATH defaults to "/" in vite.config.ts — no need to set it here.
+  # PORT is not needed for static builds — vite.config.ts handles the fallback.
+
+# SPA fallback: send all routes to index.html so React handles them client-side.
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
